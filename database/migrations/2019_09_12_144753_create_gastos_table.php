@@ -15,10 +15,10 @@ class CreateGastosTable extends Migration
     {
         Schema::create('gastos', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->Integer('comida');
-            $table->Integer('internet');
-            $table->Integer('agua');
-            $table->Integer('luz');
+            $table->String('NombreGasto');
+            $table->Integer('MontoGasto');
+            $table->Date('Fecha');
+            $table->Integer('Descripcion');
             $table->timestamps();
         });
     }

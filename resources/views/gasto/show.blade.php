@@ -5,12 +5,12 @@
         <div class="col">
             <div class="card">
                 <div class="card-header">
-                    {{ $gasto->comida }}
+                    {{ $gasto->NombreGasto }}
                 </div>
                 <div class="card-body">
-                        <p>internet : {{ $gasto->internet }}</p>
-                        <p>agua : {{ $gasto->agua }}</p>
-                        <p>luz : {{ $gasto->luz }}</p>
+                        <p>Monto del gasto : {{ $gasto->MontoGasto }}</p>
+                        <p>fecha : {{ $gasto->Fecha }}</p>
+                        <p>descripcion : {{ $gasto->Descripcion }}</p>
                 </div>
             </div>
         </div>

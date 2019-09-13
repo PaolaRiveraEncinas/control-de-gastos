@@ -37,10 +37,10 @@ class GastoController extends Controller
     public function store(Request $request)
     { 
         $datos = new Gasto();
-        $datos->comida = $request->food;
-        $datos->internet = $request->inter;
-        $datos->agua = $request->water;
-        $datos->luz = $request->light;
+        $datos->NombreGasto = $request->nombregasto;
+        $datos->MontoGasto = $request->montogasto;
+        $datos->Fecha = $request->fecha;
+        $datos->Descripcion = $request->Descrip;
         $datos->save();
         $datos=Gasto::all();
         return view('gasto.index',compact('datos'));
@@ -77,10 +77,10 @@ class GastoController extends Controller
      */
     public function update(Request $request, Gasto $gasto)
     {
-        $datos->comida = $request->food;
-        $datos->internet = $request->inter;
-        $datos->agua = $request->water;
-        $datos->luz = $request->light;
+        $datos->NombreGasto = $request->nombregasto;
+        $datos->MontoGasto = $request->montogasto;
+        $datos->Fecha = $request->fecha;
+        $datos->Descripcion = $request->Descrip;
         $datos->save();
         $datos=Gasto::all();
         return view('gasto.index',compact('datos'));
