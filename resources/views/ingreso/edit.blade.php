@@ -1,19 +1,17 @@
 @extends('layout.layouts')
 
 @section('content')
-    <form action="/contacto/{{$contacto->id}}" method="POST">
+    <form action="/ingreso/{{$ingreso->id}}" method="POST">
         @csrf
         @method('PUT')
-        <p>Ingresa tu nombre : </p>
-        <input type="text" class="form-control" value="{{ $contacto->nombre}}" name="name">
-        <p>Ingresa tu apellido : </p>
-        <input type="text" class="form-control" value="{{ $contacto->apellido}}" name="lastname">
-        <p>Ingresa tu numero : </p>
-        <input type="text" class="form-control" value="{{ $contacto->numero}}" name="number">
-        <p>Ingresa tu ci : </p>
-        <input type="text" class="form-control" value="{{ $contacto->ci}}" name="cia">
-        <p>Ingresa tu direccion : </p>
-        <input type="text" class="form-control" value="{{ $contacto->direccion}}" name="address"><br>
+        <p>nombre del gasto : </p>
+        <input type="text" class="form-control" value="{{ $ingreso->NombreGasto}}" name="nombregasto">
+        <p>descripcion del gasto : </p>
+        <input type="text" class="form-control" value="{{ $ingreso->DescripcionGasto}}" name="descripciongasto">
+        <p>fecha del gasto : </p>
+        <input type="text" class="form-control" value="{{ $ingreso->FechaGasto}}" name="fechagasto">
+        <p>monto del gasto : </p>
+        <input type="text" class="form-control" value="{{ $ingreso->MontoGasto}}" name="montogasto"><br>
         <button class="btn btn-primary"> Actualizar </button>
     </form>
 @endsection

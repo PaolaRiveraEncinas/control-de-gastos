@@ -1,12 +1,10 @@
 @extends('layout.layouts')
 
 @section('content')
-    <form action="/Gasto" method="POST">
+    <form action="/gasto" method="POST">
         @csrf     
         <p>comida : </p>
         <input type="text" class="form-control" name="food">
-        <p>baño : </p>
-        <input type="text" class="form-control" name="restroom">
         <p>internet : </p>
         <input type="text" class="form-control" name="inter">
         <p>agua : </p>

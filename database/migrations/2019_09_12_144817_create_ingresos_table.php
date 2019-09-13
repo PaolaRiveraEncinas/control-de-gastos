@@ -17,8 +17,8 @@ class CreateIngresosTable extends Migration
             $table->bigIncrements('id');
             $table->String('NombreGasto');
             $table->String('DescripcionGasto');
-            $table->String('FechaGasto');
-            $table->String('MontoGasto');
+            $table->Date('FechaGasto');
+            $table->Integer('MontoGasto');
             $table->timestamps();
         });
     }

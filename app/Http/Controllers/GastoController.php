@@ -15,7 +15,7 @@ class GastoController extends Controller
     public function index()
     {
         $datos=Gasto::all();
-        return view('Gasto.index',compact('datos'));
+        return view('gasto.index',compact('datos'));
     }
 
     /**
@@ -25,7 +25,7 @@ class GastoController extends Controller
      */
     public function create()
     {
-        return view('Gasto.create');
+        return view('gasto.create');
     }
 
     /**
@@ -38,13 +38,12 @@ class GastoController extends Controller
     { 
         $datos = new Gasto();
         $datos->comida = $request->food;
-        $datos->baño = $request->restroom;
         $datos->internet = $request->inter;
         $datos->agua = $request->water;
         $datos->luz = $request->light;
         $datos->save();
         $datos=Gasto::all();
-        return view('Gasto.index',compact('datos'));
+        return view('gasto.index',compact('datos'));
     }
 
     /**
@@ -55,7 +54,7 @@ class GastoController extends Controller
      */
     public function show(Gasto $gasto)
     {
-        return view('Gasto.show',compact('Gasto'));
+        return view('gasto.show',compact('gasto'));
     }
 
     /**
@@ -66,7 +65,7 @@ class GastoController extends Controller
      */
     public function edit(Gasto $gasto)
     {
-        return view('Gasto.edit',compact('Gasto'));
+        return view('gasto.edit',compact('gasto'));
     }
 
     /**
@@ -79,13 +78,12 @@ class GastoController extends Controller
     public function update(Request $request, Gasto $gasto)
     {
         $datos->comida = $request->food;
-        $datos->baño = $request->restroom;
         $datos->internet = $request->inter;
         $datos->agua = $request->water;
         $datos->luz = $request->light;
         $datos->save();
         $datos=Gasto::all();
-        return view('Gasto.index',compact('datos'));
+        return view('gasto.index',compact('datos'));
     }
 
     /**
@@ -98,6 +96,6 @@ class GastoController extends Controller
     {
         $gasto->delete();
         $datos=Gasto::all();
-        return view('Gasto.index',compact('datos'));
+        return view('gasto.index',compact('datos'));
     }
 }

@@ -5,13 +5,12 @@
         <div class="col">
             <div class="card">
                 <div class="card-header">
-                    {{ $contacto->nombre }} {{ $contacto->apellido }}
+                    {{ $ingreso->NombreGasto }} {{ $ingreso->DescripcionGasto }}
                 </div>
                 <div class="card-body">
-                    <p>Direccion : {{ $contacto->direccion }}</p>
-                    <p>Cedula Identidad : {{ $contacto->ci }}</p>
-                    <p>Celular : {{ $contacto->numero }}</p>
-                </div>
+                    <p>Fecha del Gasto : {{ $ingreso->FechaGasto }}</p>
+                    <p>Monto del Gasto : {{ $ingreso->MontoGasto }}</p>
+                    </div>
             </div>
         </div>
     </div>

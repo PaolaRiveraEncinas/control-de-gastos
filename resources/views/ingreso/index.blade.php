@@ -1,7 +1,7 @@
 @extends('layout.layouts')
 
 @section('content')
-<a href="/Ingreso/create" class="btn btn-primary mb-1"> Nuevo</a>
+<a href="/ingreso/create" class="btn btn-primary mb-1"> Nuevo</a>
 <table class="table">
     <thead class="thead-dark">
         <tr>
@@ -17,20 +17,20 @@
         @foreach ($datos as $dato)
               <tr>
                 <th scope="row">{{ $dato->id }}</th>
-                <td>{{ $dato->nombre }}</td>
-                <td>{{$dato->apellido}}</td>
-                <td>{{$dato->ci}}</td>
+                <td>{{ $dato->NombreGasto }}</td>
+                <td>{{$dato->DescripcionGasto}}</td>
+                <td>{{$dato->FechaGasto}}</td>
                 <td class="form-inline ">
-                    <form action="/Ingreso/{{$dato->id}}" method="POST">
+                    <form action="/ingreso/{{$dato->id}}" method="POST">
                         @method('GET')
                         <button type="submit" class="btn btn-primary mr-1"> Ver </button>    
                     </form>
-                    <form action="/Ingreso/{{$dato->id}}/edit" method="POST">
+                    <form action="/ingreso/{{$dato->id}}/edit" method="POST">
                         @csrf
                         @method('GET')
                         <button type="submit" class="btn btn-success mr-1"> Editar </button>    
                     </form>
-                    <form action="/Ingreso/{{$dato->id}}" method="POST">
+                    <form action="/ingreso/{{$dato->id}}" method="POST">
                         @csrf
                         @method('DELETE')
                         <button type="submit" class="btn btn-danger"> Eliminar </button>    

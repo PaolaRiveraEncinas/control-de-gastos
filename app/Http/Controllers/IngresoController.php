@@ -15,7 +15,7 @@ class IngresoController extends Controller
     public function index()
     {
         $datos=Ingreso::all();
-        return view('contacto.index',compact('datos'));
+        return view('ingreso.index',compact('datos'));
     }
 
     /**
@@ -25,7 +25,7 @@ class IngresoController extends Controller
      */
     public function create()
     {
-        return view('Ingreso.create');
+        return view('ingreso.create');
     }
 
     /**
@@ -37,14 +37,13 @@ class IngresoController extends Controller
     public function store(Request $request)
     {
         $datos = new Ingreso();
-        $datos->nombre = $request->name;
-        $datos->apellido = $request->lastname;
-        $datos->numero = $request->number;
-        $datos->ci = $request->cia;
-        $datos->direccion = $request->address;
+        $datos->NombreGasto = $request->nombregasto;
+        $datos->DescripcionGasto = $request->descripciongasto;
+        $datos->FechaGasto = $request->fechagasto;
+        $datos->MontoGasto = $request->montogasto;
         $datos->save();
         $datos=Ingreso::all();
-        return view('Ingreso.index',compact('datos'));
+        return view('ingreso.index',compact('datos'));
     }
 
     /**
@@ -55,7 +54,7 @@ class IngresoController extends Controller
      */
     public function show(Ingreso $ingreso)
     {
-        return view('Ingreso.show',compact('Ingreso'));
+        return view('ingreso.show',compact('ingreso'));
     }
 
     /**
@@ -78,11 +77,10 @@ class IngresoController extends Controller
      */
     public function update(Request $request, Ingreso $ingreso)
     {
-        $Ingreso->nombre = $request->name;
-        $Ingreso->apellido = $request->lastname;
-        $Ingreso->numero = $request->number;
-        $Ingreso->ci = $request->cia;
-        $Ingreso->direccion = $request->address;
+        $Ingreso->NombreGasto = $request->nombregasto;
+        $Ingreso->DescripcionGasto = $request->descripciongasto;
+        $Ingreso->FechaGasto = $request->fechagasto;
+        $Ingreso->MontoGasto = $request->montogasto;
         $Ingreso->save();
         $datos=Ingreso::all();
         return view('Ingreso.index',compact('datos'));
@@ -98,6 +96,6 @@ class IngresoController extends Controller
     {
         $Ingreso->delete();
         $datos=Ingreso::all();
-        return view('Ingreso.index',compact('datos'));
+        return view('ingreso.index',compact('datos'));
     }
 }

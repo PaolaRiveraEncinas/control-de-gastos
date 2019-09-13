@@ -1,19 +1,17 @@
 @extends('layout.layouts')
 
 @section('content')
-    <form action="/Gasto/{{$Gasto->id}}" method="POST">
+    <form action="/gasto/{{$gasto->id}}" method="POST">
         @csrf
         @method('PUT')
         <p>comida : </p>
-        <input type="text" class="form-control" value="{{ $Gasto->comida}}" name="food">
-        <p>baño : </p>
-        <input type="text" class="form-control" value="{{ $Gasto->baño}}" name="restroom">
+        <input type="text" class="form-control" value="{{ $gasto->comida}}" name="food">
         <p>internet : </p>
-        <input type="text" class="form-control" value="{{ $Gasto->internet}}" name="inter">
+        <input type="text" class="form-control" value="{{ $gasto->internet}}" name="inter">
         <p>agua : </p>
-        <input type="text" class="form-control" value="{{ $Gasto->agua}}" name="water">
+        <input type="text" class="form-control" value="{{ $gasto->agua}}" name="water">
         <p>luz : </p>
-        <input type="text" class="form-control" value="{{ $Gasto->luz}}" name="light"><br>
+        <input type="text" class="form-control" value="{{ $gasto->luz}}" name="light"><br>
         <button class="btn btn-primary"> Actualizar </button>
     </form>
 @endsection
