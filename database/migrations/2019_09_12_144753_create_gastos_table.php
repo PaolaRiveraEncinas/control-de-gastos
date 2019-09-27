@@ -18,7 +18,7 @@ class CreateGastosTable extends Migration
             $table->String('NombreGasto');
             $table->Integer('MontoGasto');
             $table->Date('Fecha');
-            $table->Integer('Descripcion');
+            $table->String('Descripcion');
             $table->timestamps();
         });
     }
