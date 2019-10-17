@@ -4,7 +4,16 @@ namespace App\Http\Controllers;
 
 use App\Contacto;
 use Illuminate\Http\Request;
-
+use Session;
+use App\Mail\MessageRecived;
+use Illuminate\Foundation\Validation\ValidatesRequests;
+use Illuminate\Database\Eloquent;
+use App\Http\Controllers\User;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Bus\Queueable;
+use Illuminate\Mail\Mailable;
+use Illuminate\Queue\SerializesModels;
+use Illuminate\Contracts\Queue\ShouldQueue;
 class ContactoController extends Controller
 {
     /**
@@ -36,6 +45,7 @@ class ContactoController extends Controller
      */
     public function store(Request $request)
     {
+       
         $datos = new Contacto();
         $datos->nombre = $request->name;
         $datos->apellido = $request->lastname;
@@ -44,7 +54,9 @@ class ContactoController extends Controller
         $datos->direccion = $request->address;
         $datos->save();
         $datos=Contacto::all();
-        return view('contacto.index',compact('datos'));
+        Mail::to('riveraencinaspaola@gmail.com')->queue(new MessageRecived($datos));
+        //  return new MensajeRecibido($datos);
+         return 'Mensaje Enviado';
     }
 
     /**

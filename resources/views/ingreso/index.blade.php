@@ -6,9 +6,9 @@
     <thead class="thead-dark">
         <tr>
             <th scope="col">Id</th>
-            <th scope="col">Nombre</th>
-            <th scope="col">Apellido</th>
-            <th scope="col">Cedula</th>
+            <th scope="col">Nombre del gasto</th>
+            <th scope="col">descripcion del gasto</th>
+            <th scope="col">fecha del gasto</th>
             <th scope="col">acciones</th>
         </tr>
     </thead>

@@ -11,7 +11,7 @@
 |
 */
 Route::get('/', function () {
-    return view('welcome');
+    return view('contacto.index');
 });
 Route::resource('/contacto','ContactoController');
 Route::resource('/gasto','GastoController');

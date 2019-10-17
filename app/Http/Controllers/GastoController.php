@@ -40,7 +40,7 @@ class GastoController extends Controller
         $datos->NombreGasto = $request->nombregasto;
         $datos->MontoGasto = $request->montogasto;
         $datos->Fecha = $request->fecha;
-        $datos->Descripcion = $request->Descrip;
+        $datos->Descripcion = $request->descrip;
         $datos->save();
         $datos=Gasto::all();
         return view('gasto.index',compact('datos'));
@@ -80,7 +80,7 @@ class GastoController extends Controller
         $datos->NombreGasto = $request->nombregasto;
         $datos->MontoGasto = $request->montogasto;
         $datos->Fecha = $request->fecha;
-        $datos->Descripcion = $request->Descrip;
+        $datos->Descripcion = $request->descrip;
         $datos->save();
         $datos=Gasto::all();
         return view('gasto.index',compact('datos'));

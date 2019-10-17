@@ -15,4 +15,5 @@
         <input type="text" class="form-control" name="address"><br>
         <button type="submit" class="btn btn-primary"> Guardar </button>
     </form>
+    <h1>ENVIAR EMAIL</h1>
 @endsection
